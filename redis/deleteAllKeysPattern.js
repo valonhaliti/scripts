@@ -7,7 +7,8 @@ if (!pattern) {
 
 const Redis = require('ioredis');
 const invokeAndLogTime = require('../helpers/invokeAndLogTime');
-const redis = new Redis();
+const config = require('../config');
+const redis = new Redis(config.redis);
 
 async function main() {
   let cursor = '0';
